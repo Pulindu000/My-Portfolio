@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>My Portfolio</title>
+        <link rel="stylesheet" href="CSS/style.css">
+    </head>
+    <body>
+        <div class="page">
+            <header>
+                <nav>
+                    <ul>
+                        <a id="logo" href="#mainPage"><span>Home</span></a>
+                        <li><a href="#aboutPage">About me</a></li>
+                        <li><a href="#">My Projects</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <section class="main" id="mainPage">
+                <video id="bg-video" muted loop autoplay src="assets/bg2.mp4"></video>
+                <aside id="details">
+                    <h1>
+                        <span id="first-name"><span>I</span><span>m</span>PULINDU</span>
+                        <span id="second-name">DE SILVA</span>
+                        <span id="position">Full Stack Developer</span>
+                    </h1>
+
+                    <aside id="action-home">
+                        <a href="#aboutPage" title="About me" id="aboutme"><span>About me</span></a>
+                        <a href="#myprojects" title="My Projects" id="see-my-project"><span>See My Projects</span></a>
+                    </aside>
+                </aside>
+            </section>
+
+            <section class="aboutme" id="aboutPage">
+
+            </section>
+        </div>
+
+        <script>
+            let homeBtm = document.getElementById("logo");
+            let homePage = document.getElementById("mainPage");
+            let aboutPage = document.getElementById("aboutPage");
+        </script>
+    </body>
+</html>
