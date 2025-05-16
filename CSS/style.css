@@ -67,7 +67,7 @@ header ul li {
 header ul li a {
     text-decoration: none;
     color: white;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     font-size: clamp(0.8rem, 0.74rem + 0.30000000000000004vw, 1.1rem);
     font-weight: bold;
     border-radius: 30px;
