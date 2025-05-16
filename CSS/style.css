@@ -68,11 +68,11 @@ header ul li a {
     text-decoration: none;
     color: white;
     font-size: 0.8rem;
-    font-size: clamp(0.8rem, 0.7200000000000001rem + 0.3999999999999999vw, 1.2rem);
+    font-size: clamp(0.8rem, 0.74rem + 0.30000000000000004vw, 1.1rem);
     font-weight: bold;
     border-radius: 30px;
     transition: all 0.5s ease;
-    margin: 0px 15px;
+    margin: 0 10px;
 }
 
 header ul li a:hover {
@@ -123,6 +123,7 @@ section.main #bg-video {
 
 #second-name {
     color: rgb(21, 97, 138);
+    font-size: 50px;
 }
 
 #des {
@@ -225,38 +226,34 @@ section.aboutme {
         height: 22px;
     }
 
+    header ul li {
+        margin: 0px 10px;
+    }
+
+
     #first-name {
         font-size: 40px;
     }
 
     #second-name {
-        color: rgb(21, 97, 138);
+        font-size: 40px;
     }
 
     #des {
-        color: rgb(255, 255, 255);
         font-size: 15px;
-        font-weight: normal;
         line-height: 25px;
         margin: 20px 0;
     }
 
     #position {
         font-size: 18px;
-        font-weight: normal;
         letter-spacing: 5px;
-        transition: opacity 1s ease-in;
     }
+
     #action-home a {
-    font-size: 18px;
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    margin-right: 25px;
-    padding: 5px 10px;
-    background-color: rgb(0, 56, 87);
-    border-radius: 10px;
-    transform: scale(1);
-    transition: transform 0.3s ease;
+        font-size: 15px;
+        margin-right: 25px;
+        padding: 5px 10px;
     }
 
     #action-home a:hover {
@@ -272,39 +269,75 @@ section.aboutme {
         height: 22px;
     }
 
+    header ul li {
+        margin: 0px 10px;
+    }
+
     #first-name {
         font-size: 25px;
     }
 
     #second-name {
-        color: rgb(21, 97, 138);
+        font-size: 25px;
     }
 
     #des {
         color: rgb(255, 255, 255);
         font-size: 12px;
-        font-weight: normal;
         line-height: 25px;
         margin: 20px 0;
     }
 
     #position {
         font-size: 14px;
-        font-weight: normal;
         letter-spacing: 2px;
         transition: opacity 1s ease-in;
     }
 
     #action-home a {
         font-size: 12px;
-        color: rgb(255, 255, 255);
-        text-decoration: none;
         margin-right: 25px;
         padding: 5px 10px;
-        background-color: rgb(0, 56, 87);
-        border-radius: 10px;
-        transform: scale(1);
-        transition: transform 0.3s ease;
+    }
+
+    #action-home a:hover {
+        transform: scale(1.05);
+    }
+}
+
+@media (max-width: 480px) {
+     /* styles for small phones like iPhones, Androids */
+    header #logo {
+        height: 15px;
+    }
+
+    header ul li {
+        margin: 0px 5px;
+    }
+
+    #first-name {
+        font-size: 25px;
+    }
+
+    #second-name {
+        font-size: 25px;
+    }
+
+    #des {
+        font-size: 12px;
+        line-height: 25px;
+        margin: 20px 0;
+    }
+
+    #position {
+        font-size: 14px;
+        letter-spacing: 2px;
+    }
+
+    #action-home a {
+        font-size: 12px;
+        margin-right: 20px;
+        padding: 5px 10px;
     }
 
     #action-home a:hover {
