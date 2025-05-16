@@ -104,6 +104,11 @@ section.main #bg-video {
     filter: hue-rotate(180deg);
 }
 
+#bg-video::-webkit-media-controls {
+  display: none !important;
+}
+
+
 #details {
     display: flex;
     flex-direction: column;
