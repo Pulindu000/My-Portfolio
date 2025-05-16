@@ -308,7 +308,7 @@ section.aboutme {
 @media (max-width: 480px) {
      /* styles for small phones like iPhones, Androids */
     header #logo {
-        height: 10px;
+        height: 2px;
     }
 
     header ul li {
