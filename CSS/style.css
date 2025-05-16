@@ -67,8 +67,8 @@ header ul li {
 header ul li a {
     text-decoration: none;
     color: white;
-    font-size: 0.7rem;
-    font-size: clamp(0.8rem, 0.74rem + 0.30000000000000004vw, 1.1rem);
+    font-size: 0.8rem;
+    font-size: clamp(0.8rem, 0.7200000000000001rem + 0.3999999999999999vw, 1.2rem);
     font-weight: bold;
     border-radius: 30px;
     transition: all 0.5s ease;
@@ -108,7 +108,7 @@ section.main #bg-video {
     display: flex;
     flex-direction: column;
     width: 800px;
-    margin: 0 8%;
+    margin: 0 6%;
     animation: appear 2s ease   ;
 }
 
@@ -118,24 +118,26 @@ section.main #bg-video {
 }
 
 #first-name {
-    font-size: 50px;
+    font-size: 1.25rem;
+    font-size: clamp(1.25rem, 0.875rem + 1.875vw, 3.125rem);
 }
 
 #second-name {
     color: rgb(21, 97, 138);
-    font-size: 50px;
 }
 
 #des {
     color: rgb(255, 255, 255);
-    font-size: 20px;
+    font-size: 0.75rem;
+    font-size: clamp(0.75rem, 0.65rem + 0.5vw, 1.25rem);
     font-weight: normal;
     line-height: 35px;
     margin: 20px 0;
 }
 
 #position {
-    font-size: 25px;
+    font-size: 0.8125rem;
+    font-size: clamp(0.8125rem, 0.6625rem + 0.75vw, 1.5625rem);
     font-weight: normal;
     letter-spacing: 5px;
     transition: opacity 1s ease-in;
@@ -147,7 +149,8 @@ section.main #bg-video {
 }
 
 #action-home a {
-    font-size: 20px;
+    font-size: 0.8125rem;
+    font-size: clamp(0.8125rem, 0.725rem + 0.43750000000000006vw, 1.25rem);
     color: rgb(255, 255, 255);
     text-decoration: none;
     margin-right: 30px;
@@ -230,28 +233,16 @@ section.aboutme {
         margin: 0px 10px;
     }
 
-
-    #first-name {
-        font-size: 40px;
-    }
-
-    #second-name {
-        font-size: 40px;
-    }
-
     #des {
-        font-size: 15px;
         line-height: 25px;
         margin: 20px 0;
     }
 
     #position {
-        font-size: 18px;
         letter-spacing: 5px;
     }
 
     #action-home a {
-        font-size: 15px;
         margin-right: 25px;
         padding: 5px 10px;
     }
@@ -273,29 +264,16 @@ section.aboutme {
         margin: 0px 10px;
     }
 
-    #first-name {
-        font-size: 25px;
-    }
-
-    #second-name {
-        font-size: 25px;
-    }
-
     #des {
-        color: rgb(255, 255, 255);
-        font-size: 12px;
         line-height: 25px;
         margin: 20px 0;
     }
 
     #position {
-        font-size: 14px;
         letter-spacing: 2px;
-        transition: opacity 1s ease-in;
     }
 
     #action-home a {
-        font-size: 12px;
         margin-right: 25px;
         padding: 5px 10px;
     }
@@ -308,34 +286,23 @@ section.aboutme {
 @media (max-width: 480px) {
      /* styles for small phones like iPhones, Androids */
     header #logo {
-        height: 2px;
+        height: 15px;
     }
 
     header ul li {
-        margin: 0px 5px;
-    }
-
-    #first-name {
-        font-size: 25px;
-    }
-
-    #second-name {
-        font-size: 25px;
+        margin: 0px 3px;
     }
 
     #des {
-        font-size: 12px;
         line-height: 25px;
         margin: 20px 0;
     }
 
     #position {
-        font-size: 14px;
-        letter-spacing: 2px;
+        letter-spacing: 1px;
     }
 
     #action-home a {
-        font-size: 12px;
         margin-right: 20px;
         padding: 5px 10px;
     }
