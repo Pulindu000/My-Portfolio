@@ -89,6 +89,7 @@ header #logo {
 /* Section one Home Styles */
 
 section.main {
+    position: relative;
     display: flex;
     height: 100vh;
     align-items: center;
@@ -110,6 +111,8 @@ section.main #bg-video {
 
 .model {
     position: absolute;
+    height: 100%;
+    width: 100%;
     scale: 1.6;
     right: -5%;
 }
