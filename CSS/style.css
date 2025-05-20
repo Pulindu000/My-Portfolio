@@ -96,9 +96,6 @@ section.main {
     background: linear-gradient(90deg, rgba(4, 37, 41, 0.77) 0%, rgba(0, 0, 0, 1) 47%);
 }
 
-.blue {
-    backdrop-filter: blur(100px);
-}
 
 section.main #bg-video {
     position: absolute;
@@ -113,12 +110,10 @@ section.main #bg-video {
 
 .model {
     position: absolute;
-    width: 100%;
-    height: 100vh;
-    scale: 1.4;
+    scale: 1.6;
     right: -5%;
-    object-fit: cover;
 }
+
 
 #bg-video::-webkit-media-controls {
   display: none !important;
@@ -129,8 +124,9 @@ section.main #bg-video {
     display: flex;
     flex-direction: column;
     width: 800px;
-    margin: 0 6%;
+    margin: 0 8%;
     animation: appear 2s ease   ;
+    z-index: 99;
 }
 
 #details h1 {
@@ -182,6 +178,7 @@ section.main #bg-video {
     background-size: 200%   ;
     box-shadow: 0 0 15px rgb(119, 119, 119);
     transform: scale(1);
+    transition: transform 0.2s linear;
     animation: gradient 2.5s linear infinite;
 }
 
@@ -219,7 +216,7 @@ section.main #bg-video {
 }
 
 #first-name span:nth-child(2) {
-    animation: child2Animation 1.3s ease ;
+    animation: child2Animation 1.3s;
 }
 
 #first-name span:nth-child(2) {
@@ -227,7 +224,7 @@ section.main #bg-video {
 }
 
 #first-name span:nth-child(3) {
-    animation: child2Animation 1.3s ease;
+    animation: child2Animation 1.3s ;
 }
 
 #first-name span:nth-child(3) {
@@ -235,7 +232,7 @@ section.main #bg-video {
 }
 
 #first-name span:nth-child(1) {
-    animation: child1Animation 1.3s ease ;
+    animation: child1Animation 1.3s  ;
 }
 
 #first-name span:nth-child(1) {
@@ -263,6 +260,10 @@ section.aboutme {
         margin: 0px 10px;
     }
 
+    #details {
+        margin-top: 50%;
+    }
+
     #des {
         line-height: 25px;
         margin: 20px 0;
@@ -280,6 +281,11 @@ section.aboutme {
     #action-home a:hover {
         transform: scale(1.05);
     }
+    .model {
+        scale: 1.05;
+        top: -32%;
+        right: 25%;
+    }
     
 }
 
@@ -292,6 +298,10 @@ section.aboutme {
 
     header ul li {
         margin: 0px 10px;
+    }
+
+    #details {
+        margin-top: 0;
     }
 
     #des {
@@ -310,6 +320,10 @@ section.aboutme {
 
     #action-home a:hover {
         transform: scale(1.05);
+    }
+
+    .model {
+       display: none;
     }
 }
 
@@ -339,5 +353,9 @@ section.aboutme {
 
     #action-home a:hover {
         transform: scale(1.05);
+    }
+
+    .model {
+        display: none;
     }
 }
