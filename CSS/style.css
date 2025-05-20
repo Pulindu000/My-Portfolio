@@ -14,6 +14,7 @@ body {
     position: relative;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 /* Header styles */
@@ -76,7 +77,7 @@ header ul li a {
 }
 
 header ul li a:hover {
-    color: rgb(8, 81, 110);
+    color: rgb(8, 110, 110);
 }
 
 header #logo {
@@ -91,6 +92,12 @@ section.main {
     display: flex;
     height: 100vh;
     align-items: center;
+    
+    background: linear-gradient(90deg, rgba(4, 37, 41, 0.77) 0%, rgba(0, 0, 0, 1) 47%);
+}
+
+.blue {
+    backdrop-filter: blur(100px);
 }
 
 section.main #bg-video {
@@ -102,6 +109,15 @@ section.main #bg-video {
     z-index: -99;
     animation: bgAnimation 3s ease;
     filter: hue-rotate(180deg);
+}
+
+.model {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    scale: 1.4;
+    right: -5%;
+    object-fit: cover;
 }
 
 #bg-video::-webkit-media-controls {
@@ -128,7 +144,7 @@ section.main #bg-video {
 }
 
 #second-name {
-    color: rgb(21, 97, 138);
+    color: rgb(21, 138, 132);
 }
 
 #des {
@@ -156,14 +172,23 @@ section.main #bg-video {
 #action-home a {
     font-size: 0.8125rem;
     font-size: clamp(0.8125rem, 0.725rem + 0.43750000000000006vw, 1.25rem);
-    color: rgb(255, 255, 255);
+    font-weight: bold;
+    color: rgb(0, 82, 78);
     text-decoration: none;
     margin-right: 30px;
-    padding: 5px 10px;
-    background-color: rgb(0, 56, 87);
-    border-radius: 10px;
+    padding: 5px 15px;
+    border-radius: 20px;
+    background: linear-gradient(90deg,rgba(255, 255, 255, 1) 0%, rgba(185, 255, 71, 1) 30%, rgba(0, 255, 229, 1) 67%, rgba(255, 255, 255, 1) 100%);
+    background-size: 200%   ;
+    box-shadow: 0 0 15px rgb(119, 119, 119);
     transform: scale(1);
-    transition: transform 0.3s ease;
+    animation: gradient 2.5s linear infinite;
+}
+
+@keyframes gradient {
+    to {
+        background-position: 200%;
+    }
 }
 
 #action-home a:hover {
