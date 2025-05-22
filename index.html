@@ -1,26 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	    <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>My Portfolio</title>
-        <link rel="stylesheet" href="CSS/style.css">
-    </head>
-    <body>
-        <div class="page">
-            <header>
-                <nav>
-                    <ul>
-                        <li><img id="logo" src="assets/Logo.png" alt="MyPortfolioLogo"></li>
-                        <li><a id="nav-about">About me</a></li>
-                        <li><a href="#">My Projects</a></li>
-                    </ul>
-                </nav>
-            </header>
 
-            <section class="main" id="mainPage">
-                <video src="assets/bg5.mp4" id="bg-video" muted autoplay loop playsinline></video>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exile&family=Jaro:opsz@6..72&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poetsen+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+    <div class="preloader" id="preloader">
+        <aside class="preloader-text">
+            <h1 class="preloader-title">PORTFOLIO</h1>
+        </aside>
+    </div>
+    <div class="page" id="page">
+        <header>
+            <nav>
+                <ul>
+                    <li><img id="logo" src="assets/Logo.png" alt="MyPortfolioLogo"></li>
+                    <li><a id="nav-about">About me</a></li>
+                    <li><a href="#">My Projects</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <video src="assets/bg5-transitioned.mp4" id="bg-video" muted autoplay loop playsinline preload="auto"></video>
+        <div class="bg-container">
+            <aside class="home-text">
+                <h3 class="home-des" id="des"><span>Welcome</span><span>to</span><span>my</span></h3>
+                <h1 class="home-title">PORTFOLIO</h1>
+            </aside>
+        </div>
+
+        <section class="main" id="mainPage">
+            <!--<video src="assets/bg5.mp4" id="bg-video" muted autoplay loop playsinline></video>
 
                 <aside id="details">
                     <h1 id="first-name"><span>I</span><span>m</span><span>PULINDU</span><span id="second-name">DE SILVA</span></h1>
@@ -33,29 +58,50 @@
                         <a title="About me" id="aboutme"><span>About me</span></a>
                         <a href="#myprojects" title="My Projects" id="see-my-project"><span>See My Projects</span></a>
                     </aside>
-                </aside>
-            </section>
+                </aside>-->
 
-            <section class="aboutme" id="aboutPage">
-                
-            </section>
-        </div>
-        <script>
-            let aboutBtn = document.getElementById("aboutme")
-            let aboutBtnNav = document.getElementById("nav-about")
-            let aboutPage = document.getElementById("aboutPage")
 
-            aboutBtn.addEventListener('click', () => {
-                aboutPage.scrollIntoView({
-                    behavior: 'smooth'
-                });
+        </section>
+
+        <section class="aboutme" id="aboutPage">
+            <p>Yooo Pulindu, if you’ve got that gradient text and you’re styling a sleek portfolio or landing page, then
+                a background video can elevate the whole vibe 🔥 — but you gotta match it to your theme, aesthetic, and
+                vibes. Here are some killer background video ideas that would totally slap with your gradient setup:</p>
+        </section>
+    </div>
+    <script>
+        let aboutBtn = document.getElementById("aboutme");
+        let aboutBtnNav = document.getElementById("nav-about");
+        let aboutPage = document.getElementById("aboutPage");
+        let pageloader = document.getElementById("preloader");
+        let page = document.getElementById("page");
+        let homeDes = document.getElementById("des");
+
+        aboutBtnNav.addEventListener('click', () => {
+            aboutPage.scrollIntoView({
+                behavior: 'smooth'
             });
-            
-            aboutBtnNav.addEventListener('click', () => {
-                aboutPage.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        </script>
-    </body>
+        });
+
+        window.addEventListener("load", function () {
+            pageloader.style.opacity = "1";
+            setTimeout(function () {
+                pageloader.style.opacity = "0";
+
+                setTimeout(function () {
+                    pageloader.style.display = "none";
+                }, 300);
+                page.style.opacity = "1";
+                page.style.display = "block";
+                homeDes.style.display = "block";
+            }, 2000);
+
+
+
+
+        });
+
+    </script>
+</body>
+
 </html>
