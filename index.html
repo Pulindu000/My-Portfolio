@@ -13,18 +13,15 @@
                 <nav>
                     <ul>
                         <li><img id="logo" src="assets/Logo.png" alt="MyPortfolioLogo"></li>
-                        <li><a href="#aboutPage">About me</a></li>
+                        <li><a id="nav-about">About me</a></li>
                         <li><a href="#">My Projects</a></li>
                     </ul>
                 </nav>
             </header>
 
             <section class="main" id="mainPage">
-                <spline-viewer class="model" url="https://prod.spline.design/cBEpF3OgBNg1RUN0/scene.splinecode"></spline-viewer>
-                <img class="model-gif" src="assets/3d-Cropped.gif" alt="">
-                <video id="bg-video" autoplay muted loop playsinline preload="metadata">
-                    <source src="as.mp4" type="video/mp4">
-                </video>
+                <video src="assets/bg5.mp4" id="bg-video" muted autoplay loop playsinline></video>
+
                 <aside id="details">
                     <h1 id="first-name"><span>I</span><span>m</span><span>PULINDU</span><span id="second-name">DE SILVA</span></h1>
                     <h1 id="position">Computer Science Undergraduate</span></h1>
@@ -33,7 +30,7 @@
                         all about learning, creating, and leveling up.</p>
 
                     <aside id="action-home">
-                        <a href="#aboutPage" title="About me" id="aboutme"><span>About me</span></a>
+                        <a title="About me" id="aboutme"><span>About me</span></a>
                         <a href="#myprojects" title="My Projects" id="see-my-project"><span>See My Projects</span></a>
                     </aside>
                 </aside>
@@ -43,6 +40,22 @@
                 
             </section>
         </div>
-        <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.96/build/spline-viewer.js"></script>
+        <script>
+            let aboutBtn = document.getElementById("aboutme")
+            let aboutBtnNav = document.getElementById("nav-about")
+            let aboutPage = document.getElementById("aboutPage")
+
+            aboutBtn.addEventListener('click', () => {
+                aboutPage.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+            
+            aboutBtnNav.addEventListener('click', () => {
+                aboutPage.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        </script>
     </body>
 </html>
