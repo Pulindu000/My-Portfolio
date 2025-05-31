@@ -47,7 +47,7 @@ body {
 }
 
 .page {
-    opacity: 0;
+    opacity: 1;
     display: none;
     position: relative;
     margin: 0;
@@ -132,12 +132,28 @@ header #logo {
 
 /* Bg sections */
 .bg-container {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
     width: 100vw;
+}
+
+.homeblur {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    transition: filter 1s ease;
+}
+
+.homeblur.blur {
+    filter: blur(10px);
 }
 
 #bg-video {
@@ -167,15 +183,14 @@ header #logo {
 
 .home-title {
     font-family: "Poppins";
-    font-size: 3rem;
-    font-size: clamp(3rem, 1.5999999999999999rem + 7.000000000000001vw, 10rem);
+    font-size: 11.5rem;
     background: #ffffff;
     background: linear-gradient(90deg,rgba(255, 255, 255, 1) 0%, rgba(199, 199, 199, 1) 23%, rgba(150, 150, 150, 1) 50%, rgba(199, 199, 199, 1) 79%, rgba(255, 255, 255, 1) 100%);    
     background-clip: text; 
     color: transparent;
     background-size: 200%;
     margin: 0;
-    line-height: 1;
+    line-height: 0.8;
     animation: preloader-animation 3s linear infinite;
 }
 
@@ -200,7 +215,7 @@ header #logo {
 }
 
 .home-des span:nth-child(1) {
-    color: rgb(85, 85, 85);
+    color: rgb(151, 151, 151);
     animation: child1 1.5s ease forwards;
 }
 
@@ -208,14 +223,62 @@ header #logo {
   animation: child1 1.5s ease forwards;
 }
 
+#contact {
+    position: absolute;
+    height: 5em;
+    width: 5em;
+    left: 2%;
+    bottom: 3%;
+    transition: 
+        height 0.5s ease,
+        width 0.5s ease,
+        border-radius 0.5s ease;
+    margin: 10px 10px;
+    border-style: none;
+    border-radius: 20em;
+    animation: scrolling-text linear forwards;
+    animation-timeline: scroll(root);
+    animation-range: exit 0% 20%;
+}
 
+#contact.clicked {
+    height: 20em;
+    width: 18em;
+    border-radius: 2em;
+
+}
+
+#contactImg.active {
+    display: none;
+}
 
 /* Aboutme page styles */
 
 section.aboutme {
-    display: block;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 100vh;
     background-color: #ffffff00;
+}
+
+#homeBtn {
+    position: fixed;
+    right: 2%;
+    bottom: 4%;
+    padding: 0.5em 0.5em;
+    margin: 10px 10px;
+    border-radius: 20em;
+    opacity: 0;
+    animation: home linear forwards;
+    animation-timeline: scroll(root);
+    animation-range: exit 0% 30%;
+}
+
+@keyframes home {
+    from {opacity: 0;}
+    to {opacity: 1;}
 }
 
 @keyframes sec-content {
@@ -238,14 +301,16 @@ section.aboutme {
     margin: 50px auto;
     color: rgb(255, 255, 255);
     transform: scale(0.8);
-    opacity: 0;
-    animation: sec-content 1s ease-out forwards;
+    animation: sec-content linear forwards;
     animation-timeline: scroll(root);
-    animation-range: cover 10% 40%;
+    animation-range: entry 30% 50%;
     will-change: transform, opacity;
+    opacity: 0;
+    
 }
 
 .test {
+    background-color: #313131;
     height: 100vh;
 }
 

@@ -29,7 +29,7 @@
             <header>
                 <nav>
                     <ul>
-                        <li><img id="logo" src="assets/Logo.png" alt="MyPortfolioLogo"></li>
+                        <!--<li><img id="logo" src="assets/Logo.png" alt="MyPortfolioLogo"></li>-->
                         <li><a id="nav-about">About me</a></li>
                         <li><a href="#">My Projects</a></li>
                     </ul>
@@ -38,12 +38,16 @@
         </div>
 
 
-        <div class="bg-container">
-            <video src="assets/bg5-transitioned.mp4" id="bg-video" muted autoplay loop playsinline preload="auto" height="1080px" width="1920px"></video>
-            <aside class="home-text">
-                <h3 class="home-des" id="des"><span>Welcome</span><span>to</span><span>my</span></h3>
-                <h1 class="home-title">PORTFOLIO</h1>
-            </aside>
+        <div class="bg-container" id="home">
+            <div class="homeblur" id="blur">
+                <video src="assets/bg5-transitioned.mp4" id="bg-video" muted autoplay loop playsinline preload="auto" height="1080px" width="1920px"></video>
+                <aside class="home-text">
+                    <h3 class="home-des" id="des"><span>Welcome</span><span>to</span><span>My</span></h3>
+                    <h1 class="home-title">PORTFOLIO</h1>
+                </aside>
+            </div>
+            
+            <button id="contact"><img id="contactImg" src="assets/contact.svg" alt="Contact"></button>
         </div>
 
         <section class="aboutme" id="aboutPage">
@@ -53,6 +57,8 @@
         </section>
 
         <section class="test"></section>
+
+        <button id="homeBtn"><img  src="assets/homeBtn.svg" alt="HomeBtn"></button>
     </div>
     <script>
         let aboutBtn = document.getElementById("aboutme");
@@ -61,10 +67,19 @@
         let pageloader = document.getElementById("preloader");
         let page = document.getElementById("page");
         let homeDes = document.getElementById("des");
+        let homePage = document.getElementById('home');
+        let homeBtn = document.getElementById("homeBtn");
+        let contact = document.getElementById('contact');
 
         aboutBtnNav.addEventListener('click', () => {
             aboutPage.scrollIntoView({
                 behavior: 'smooth'
+            });
+        });
+
+        homeBtn.addEventListener('click', () => {
+            homePage.scrollIntoView({
+                behavior: "smooth"
             });
         });
 
@@ -84,6 +99,22 @@
 
 
 
+        });
+
+        contact.addEventListener('click', (e) => {
+            e.stopPropagation();
+            contact.classList.add('clicked');
+            document.getElementById('contactImg').classList.add('active');
+            document.getElementById("blur").classList.add("blur");
+        });
+
+        document.body.addEventListener('click', (e) => {
+            if (e.target !== contact) {
+                contact.classList.remove('clicked');
+                document.getElementById('contactImg').classList.remove('active');
+                document.getElementById("blur").classList.remove("blur");
+
+            }
         });
 
     </script>
