@@ -14,9 +14,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Exile&family=Jaro:opsz@6..72&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poetsen+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
-
-
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/style.css?v=1">
 </head>
 
 <body>
@@ -26,48 +24,35 @@
         </aside>
     </div>
     <div class="page" id="page">
-        <header>
-            <nav>
-                <ul>
-                    <li><img id="logo" src="assets/Logo.png" alt="MyPortfolioLogo"></li>
-                    <li><a id="nav-about">About me</a></li>
-                    <li><a href="#">My Projects</a></li>
-                </ul>
-            </nav>
-        </header>
 
-        <video src="assets/bg5-transitioned.mp4" id="bg-video" muted autoplay loop playsinline preload="auto"></video>
+        <div class="headerscroll">
+            <header>
+                <nav>
+                    <ul>
+                        <li><img id="logo" src="assets/Logo.png" alt="MyPortfolioLogo"></li>
+                        <li><a id="nav-about">About me</a></li>
+                        <li><a href="#">My Projects</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+
+
         <div class="bg-container">
+            <video src="assets/bg5-transitioned.mp4" id="bg-video" muted autoplay loop playsinline preload="auto" height="1080px" width="1920px"></video>
             <aside class="home-text">
                 <h3 class="home-des" id="des"><span>Welcome</span><span>to</span><span>my</span></h3>
                 <h1 class="home-title">PORTFOLIO</h1>
             </aside>
         </div>
 
-        <section class="main" id="mainPage">
-            <!--<video src="assets/bg5.mp4" id="bg-video" muted autoplay loop playsinline></video>
-
-                <aside id="details">
-                    <h1 id="first-name"><span>I</span><span>m</span><span>PULINDU</span><span id="second-name">DE SILVA</span></h1>
-                    <h1 id="position">Computer Science Undergraduate</span></h1>
-                    <p id="des">a passionate Computer Science undergrad and self-taught Full Stack Developer. I build clean, functional web
-                        experiences and love turning ideas into reality through code. Whether it's front-end finesse or back-end logic, I&apos;m
-                        all about learning, creating, and leveling up.</p>
-
-                    <aside id="action-home">
-                        <a title="About me" id="aboutme"><span>About me</span></a>
-                        <a href="#myprojects" title="My Projects" id="see-my-project"><span>See My Projects</span></a>
-                    </aside>
-                </aside>-->
-
-
-        </section>
-
         <section class="aboutme" id="aboutPage">
-            <p>Yooo Pulindu, if you’ve got that gradient text and you’re styling a sleek portfolio or landing page, then
-                a background video can elevate the whole vibe 🔥 — but you gotta match it to your theme, aesthetic, and
-                vibes. Here are some killer background video ideas that would totally slap with your gradient setup:</p>
+            <div class="aboutme-content">
+                <h1 class="about-title">About me</h1>
+            </div>
         </section>
+
+        <section class="test"></section>
     </div>
     <script>
         let aboutBtn = document.getElementById("aboutme");

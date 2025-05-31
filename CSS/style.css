@@ -18,7 +18,7 @@ body {
     align-items: center;
     height: 100vh;
     transition: opacity 0.3s ease;
-    background-color: #003b49;
+    background-color: #000000;
 }
 
 .preloader-text {
@@ -28,16 +28,16 @@ body {
 }
 
 .preloader-title {
-    font-family: "jaro";
-    font-size: 4.5rem;
-    font-size: clamp(4.5rem, 1.1167512690355328rem + 15.736040609137056vw, 20rem);
+    font-family: "poppins";
+    font-size: 3rem;
+    font-size: clamp(3rem, 1.5999999999999999rem + 7.000000000000001vw, 10rem);    
     background: #ffffff;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(171, 252, 255, 1) 33%, rgba(54, 181, 255, 1) 66%, rgba(255, 255, 255, 1) 100%);
-    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
+    background: #ffffff;
+    background: linear-gradient(90deg,rgba(255, 255, 255, 1) 0%, rgba(199, 199, 199, 1) 23%, rgba(150, 150, 150, 1) 50%, rgba(199, 199, 199, 1) 79%, rgba(255, 255, 255, 1) 100%);
     background-clip: text;
     background-size: 200%;
     color: transparent;
-    margin: 72px 0 0 0;
+    margin: 0;
     line-height: 250px;
     animation: preloader-animation 2s linear infinite;
 }
@@ -69,8 +69,22 @@ body {
     }
 }
 
+@keyframes headerscroll {
+    from {opacity: 1; transform: scale(1);}
+    to {opacity: 0; transform: scale(0.9);}
+}
+
+.headerscroll {
+    position: fixed;
+    width: 100%;
+    transform-origin: left;
+    animation: headerscroll linear forwards;
+    animation-timeline: scroll(root);
+    animation-range: exit 0% 20%;
+}
+
 header {
-    position: absolute;
+    position: fixed;
     display: flex;
     align-items: center;
     height: 10vh;
@@ -106,7 +120,8 @@ header ul li a {
 }
 
 header ul li a:hover {
-    color: rgb(10, 150, 150);
+    color: rgb(160, 160, 160);
+    transform: scale(1.1);
 }
 
 header #logo {
@@ -122,15 +137,17 @@ header #logo {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    width: 100vw;
 }
 
 #bg-video {
-    position: fixed;
+    position: absolute;
     width: 100%;
     height: 100vh;
     object-fit: cover;
-    opacity: 0.7;
+    opacity: 0.3;
     z-index: -99;
+    filter: saturate(0);
 }
 
 
@@ -139,37 +156,35 @@ header #logo {
 }
 
 .home-text {
-    position: fixed;
     display: flex;
     flex-direction: column;
     margin: 0 10px;
     z-index: -1;
-
+    animation: scrolling-text linear forwards;
+    animation-timeline: scroll(root);
+    animation-range: exit 0% 20%;
 }
-
 
 .home-title {
-    font-family: "jaro";
-    font-size: 4.5rem;
-    font-size: clamp(4.5rem, 1.1167512690355328rem + 15.736040609137056vw, 20rem);
-    color: white;
-    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.459);
+    font-family: "Poppins";
+    font-size: 3rem;
+    font-size: clamp(3rem, 1.5999999999999999rem + 7.000000000000001vw, 10rem);
+    background: #ffffff;
+    background: linear-gradient(90deg,rgba(255, 255, 255, 1) 0%, rgba(199, 199, 199, 1) 23%, rgba(150, 150, 150, 1) 50%, rgba(199, 199, 199, 1) 79%, rgba(255, 255, 255, 1) 100%);    
+    background-clip: text; 
+    color: transparent;
+    background-size: 200%;
     margin: 0;
-    line-height: 220px;
-    animation: scrolling-text 1s ease-in-out forwards;
-    animation-timeline: scroll(root);
-    animation-range: exit 0% 100%;
-    will-change: transform, opacity;
-
+    line-height: 1;
+    animation: preloader-animation 3s linear infinite;
 }
+
+
 
 @keyframes scrolling-text {
-    to {scale: 30; letter-spacing: -45px;}
+    to {opacity: 0; transform: scale(0.9);}
 }
 
-@keyframes scrolling-text-des {
-    to {opacity: 0; transform: translateY(10px);}
-}
 
 .home-des {
     display: none;
@@ -177,21 +192,15 @@ header #logo {
     margin: 0;
     font-size: 1rem;
     font-size: clamp(1rem, 0.5634517766497462rem + 2.030456852791878vw, 3rem);
-    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.459);
-    animation: scrolling-text-des linear forwards;
-    animation-timeline: scroll(root);
-    animation-range: exit 0% 10%;
-    will-change: transform, opacity;
-
 }
 
 @keyframes child1 {
     from {margin-right: 0;}
-    to {margin-right: 10px;}
+    to {margin-right: 15px;}
 }
 
 .home-des span:nth-child(1) {
-    color: rgb(0, 183, 255);
+    color: rgb(85, 85, 85);
     animation: child1 1.5s ease forwards;
 }
 
@@ -200,19 +209,44 @@ header #logo {
 }
 
 
-/* Section one Home Styles */
-
-section.main {
-    height: 100vh;
-
-}
 
 /* Aboutme page styles */
 
 section.aboutme {
+    display: block;
     height: 100vh;
+    background-color: #ffffff00;
+}
+
+@keyframes sec-content {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.aboutme-content {
+    display: flex;
+}
+
+.about-title {
+    font-size: 3rem;
+    margin: 50px auto;
+    color: rgb(255, 255, 255);
+    transform: scale(0.8);
+    opacity: 0;
+    animation: sec-content 1s ease-out forwards;
+    animation-timeline: scroll(root);
+    animation-range: cover 10% 40%;
     will-change: transform, opacity;
-    background-color: #ffffff;
+}
+
+.test {
+    height: 100vh;
 }
 
 /* Responsive media queries */
@@ -226,15 +260,6 @@ section.aboutme {
     header ul li {
         margin: 0px 10px;
     }
-
-    .home-title {
-        line-height: 150px;
-    }
-
-    @keyframes scrolling-text {
-    to {scale: 25; letter-spacing: -30px;}
-    }
-    
 }
 
 
@@ -248,13 +273,6 @@ section.aboutme {
         margin: 0px 10px;
     }
 
-    .home-title {
-        line-height: 70px;
-    }
-
-    @keyframes scrolling-text {
-    to {scale: 40; letter-spacing: -20px;}
-    }
 }
 
 @media (max-width: 480px) {
@@ -265,14 +283,6 @@ section.aboutme {
 
     header ul li {
         margin: 0px 3px;
-    }
-
-    .home-title {
-        line-height: 60px;
-    }
-
-    @keyframes scrolling-text {
-    to {scale: 40; letter-spacing: -10px;}
     }
 
 }
