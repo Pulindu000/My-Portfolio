@@ -81,6 +81,7 @@ body {
     animation: headerscroll linear forwards;
     animation-timeline: scroll(root);
     animation-range: exit 0% 20%;
+    z-index: 99;
 }
 
 header {
@@ -89,7 +90,7 @@ header {
     align-items: center;
     height: 10vh;
     width: 100%;
-    z-index: 100;
+    z-index: 999;
     animation: headerAnimation 1.5s ease;
 }
 
@@ -139,6 +140,7 @@ header #logo {
     align-items: center;
     height: 100vh;
     width: 100vw;
+    z-index: 0;
 }
 
 .homeblur {
@@ -150,6 +152,7 @@ header #logo {
     height: 100vh;
     width: 100vw;
     transition: filter 1s ease;
+    z-index: -99;
 }
 
 .homeblur.blur {
@@ -164,8 +167,14 @@ header #logo {
     opacity: 0.3;
     z-index: -99;
     filter: saturate(0);
+    animation: bg linear forwards;
+    animation-timeline: scroll(root);
+    animation-range: exit 0% 30%;
 }
 
+@keyframes bg {
+    to {opacity: 0;}
+}
 
 #bg-video::-webkit-media-controls {
   display: none !important;
@@ -176,7 +185,7 @@ header #logo {
     flex-direction: column;
     margin: 0 10px;
     z-index: -1;
-    animation: scrolling-text linear forwards;
+    animation: home-text linear forwards;
     animation-timeline: scroll(root);
     animation-range: exit 0% 20%;
 }
@@ -196,7 +205,7 @@ header #logo {
 
 
 
-@keyframes scrolling-text {
+@keyframes home-text {
     to {opacity: 0; transform: scale(0.9);}
 }
 
@@ -225,20 +234,25 @@ header #logo {
 
 #contact {
     position: absolute;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
     height: 5em;
-    width: 5em;
+    width: 16em;
     left: 2%;
     bottom: 3%;
     transition: 
-        height 0.5s ease,
-        width 0.5s ease,
+        height 0.6s ease,
+        width 0.6s ease,
         border-radius 0.5s ease;
+    background-color: #ffffff;
     margin: 10px 10px;
     border-style: none;
-    border-radius: 20em;
-    animation: scrolling-text linear forwards;
+    border-radius: 5em;
+    animation: home-text linear forwards;
     animation-timeline: scroll(root);
     animation-range: exit 0% 20%;
+    z-index: 99;
 }
 
 #contact.clicked {
@@ -246,6 +260,22 @@ header #logo {
     width: 18em;
     border-radius: 2em;
 
+}
+
+#contact h2 {
+    font-family: "poppins";
+    font-size: 1.1rem;
+    color: #1b1b1b;
+}
+
+#contactTitle.active {
+    display: none;
+}
+
+#contactImg {
+    height: 2.5em;
+    width: auto;
+    margin: 0 16px 0px 15px;
 }
 
 #contactImg.active {
