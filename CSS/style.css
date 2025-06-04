@@ -11,6 +11,8 @@ body {
     transition: opacity 0.5s ease;
 }
 
+/*  Preloader Styles */
+
 .preloader {
     opacity: 0;
     display: flex;
@@ -56,47 +58,25 @@ body {
     transition: opacity 0.3s ease;
 }
 
+
 /* Header styles */
 
-@keyframes headerAnimation {
-    0% {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes headerscroll {
-    from {opacity: 1; transform: scale(1);}
-    to {opacity: 0; transform: scale(0.9);}
-}
-
-.headerscroll {
-    position: fixed;
-    width: 100%;
-    transform-origin: left;
-    animation: headerscroll linear forwards;
-    animation-timeline: scroll(root);
-    animation-range: exit 0% 20%;
-    z-index: 99;
-}
-
 header {
-    position: fixed;
+    position: absolute;
     display: flex;
     align-items: center;
     height: 10vh;
     width: 100%;
     z-index: 999;
-    animation: headerAnimation 1.5s ease;
 }
 
+header nav {
+    display: flex;
+}
 
 header ul {
     display: flex;
+    align-items: center;
     list-style: none;
     padding: 0;
     margin-left: 20px;
@@ -131,7 +111,20 @@ header #logo {
     cursor: pointer;
 }
 
-/* Bg sections */
+header a:focus,
+header a:active {
+    outline: none;
+    box-shadow: none;
+}
+
+#time {
+    margin-left: auto;
+    color: #ffffff;
+
+}
+
+
+/* Home Page */
 .bg-container {
     position: relative;
     display: flex;
@@ -143,33 +136,14 @@ header #logo {
     z-index: 0;
 }
 
-.homeblur {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
-    transition: filter 1s ease;
-    z-index: -99;
-}
-
-.homeblur.blur {
-    filter: blur(10px);
-}
-
 #bg-video {
     position: absolute;
     width: 100%;
     height: 100vh;
     object-fit: cover;
-    opacity: 0.3;
+    opacity: 0.25;
     z-index: -99;
     filter: saturate(0);
-    animation: bg linear forwards;
-    animation-timeline: scroll(root);
-    animation-range: exit 0% 30%;
 }
 
 @keyframes bg {
@@ -185,28 +159,20 @@ header #logo {
     flex-direction: column;
     margin: 0 10px;
     z-index: -1;
-    animation: home-text linear forwards;
-    animation-timeline: scroll(root);
-    animation-range: exit 0% 20%;
 }
 
 .home-title {
     font-family: "Poppins";
-    font-size: 11.5rem;
+    font-size: 3rem;
+    font-size: clamp(3rem, 1.2999999999999998rem + 8.5vw, 11.5rem);
     background: #ffffff;
     background: linear-gradient(90deg,rgba(255, 255, 255, 1) 0%, rgba(199, 199, 199, 1) 23%, rgba(150, 150, 150, 1) 50%, rgba(199, 199, 199, 1) 79%, rgba(255, 255, 255, 1) 100%);    
     background-clip: text; 
     color: transparent;
     background-size: 200%;
     margin: 0;
-    line-height: 0.8;
+    line-height: 0.9;
     animation: preloader-animation 3s linear infinite;
-}
-
-
-
-@keyframes home-text {
-    to {opacity: 0; transform: scale(0.9);}
 }
 
 
@@ -218,74 +184,76 @@ header #logo {
     font-size: clamp(1rem, 0.5634517766497462rem + 2.030456852791878vw, 3rem);
 }
 
-@keyframes child1 {
-    from {margin-right: 0;}
-    to {margin-right: 15px;}
+
+
+/* Section animations */
+
+.animate-me {
+   opacity: 1; 
 }
 
-.home-des span:nth-child(1) {
-    color: rgb(151, 151, 151);
+.fade-In-Up {
+    opacity: 0;
+}
+
+.fade-In-Up.show {
+    animation: fadeInUp 1s ease forwards;
+}
+
+.header-anim {
+    opacity: 0;
+}
+
+.header-anim.show {
+    animation: header-anim 1s ease forwards;
+}
+
+.home-des.show span:nth-child(1) {
     animation: child1 1.5s ease forwards;
 }
 
-.home-des span:nth-child(2) {
-  animation: child1 1.5s ease forwards;
+.home-des.show span:nth-child(2) {
+    animation: child1 1.5s ease forwards;
 }
 
-#contact {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    height: 5em;
-    width: 16em;
-    left: 2%;
-    bottom: 3%;
-    transition: 
-        height 0.6s ease,
-        width 0.6s ease,
-        border-radius 0.5s ease;
-    background-color: #ffffff;
-    margin: 10px 10px;
-    border-style: none;
-    border-radius: 5em;
-    animation: home-text linear forwards;
-    animation-timeline: scroll(root);
-    animation-range: exit 0% 20%;
-    z-index: 99;
+.about-title span:nth-child(1) {
+    color: white;
 }
 
-#contact.clicked {
-    height: 20em;
-    width: 18em;
-    border-radius: 2em;
-
+.about-title.show span:nth-child(1) {
+    animation: child1 1s ease forwards;
 }
 
-#contact h2 {
-    font-family: "poppins";
-    font-size: 1.1rem;
-    color: #1b1b1b;
+.about-title.show span:nth-child(2) {
+    animation: child1 1s ease forwards;
 }
 
-#contactTitle.active {
-    display: none;
+
+@keyframes child1 {
+    from {margin-right: 0;}
+    to {margin-right: clamp(0.8rem, 2vw, 1.7rem);}
 }
 
-#contactImg {
-    height: 2.5em;
-    width: auto;
-    margin: 0 16px 0px 15px;
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-#contactImg.active {
-    display: none;
+@keyframes header-anim {
+    from {opacity: 0; transform: translateY(-50px);}
+
+    to {opacity: 1; transform: translateY(0px);}
 }
 
 /* Aboutme page styles */
 
-section.aboutme {
-    position: relative;
+.aboutme {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -301,48 +269,47 @@ section.aboutme {
     margin: 10px 10px;
     border-radius: 20em;
     opacity: 0;
-    animation: home linear forwards;
-    animation-timeline: scroll(root);
-    animation-range: exit 0% 30%;
+    transition: opacity 0.5s ease;
 }
 
-@keyframes home {
-    from {opacity: 0;}
-    to {opacity: 1;}
+#homeBtn.show {
+    opacity: 1;
 }
 
-@keyframes sec-content {
-    from {
-        transform: scale(0.8);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
 
 .aboutme-content {
     display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 60%;
 }
 
 .about-title {
-    font-size: 3rem;
-    margin: 50px auto;
+    font-size: 2.3rem;
+    font-size: clamp(2.3rem, 1.9599999999999997rem + 1.7000000000000002vw, 4rem);
+    margin: clamp(0.5rem, 2vw , 2.5rem) 0;
     color: rgb(255, 255, 255);
-    transform: scale(0.8);
-    animation: sec-content linear forwards;
-    animation-timeline: scroll(root);
-    animation-range: entry 30% 50%;
-    will-change: transform, opacity;
-    opacity: 0;
-    
+    text-wrap: wrap;
 }
 
+
+.about-des {
+    color: white;
+    font-size: 1rem;
+    font-size: clamp(1rem, 0.9rem + 0.5vw, 1.5rem);
+    text-align: center;
+    line-height: 1.8;
+}
+
+
+/*  Next Section  */
+
 .test {
-    background-color: #313131;
+    background-color: black;
     height: 100vh;
 }
+
+
 
 /* Responsive media queries */
 
@@ -354,6 +321,10 @@ section.aboutme {
 
     header ul li {
         margin: 0px 10px;
+    }
+
+    .aboutme-content {
+        width: 65%;
     }
 }
 
@@ -368,6 +339,11 @@ section.aboutme {
         margin: 0px 10px;
     }
 
+    .about-title {
+        text-align: center;
+    }
+    
+
 }
 
 @media (max-width: 480px) {
@@ -380,4 +356,11 @@ section.aboutme {
         margin: 0px 3px;
     }
 
+    .aboutme-content {
+        width: 75%;
+    }
+
+    .about-title {
+        text-align: center;
+    }
 }
