@@ -134,6 +134,7 @@ header a:active {
     height: 100vh;
     width: 100vw;
     z-index: 0;
+    background-color: #0e0e0f;
 }
 
 #bg-video {
@@ -164,7 +165,7 @@ header a:active {
 .home-title {
     font-family: "Poppins";
     font-size: 3rem;
-    font-size: clamp(3rem, 1.2999999999999998rem + 8.5vw, 11.5rem);
+    font-size: clamp(3rem, 0.6000000000000001rem + 12vw, 15rem);
     background: #ffffff;
     background: linear-gradient(90deg,rgba(255, 255, 255, 1) 0%, rgba(199, 199, 199, 1) 23%, rgba(150, 150, 150, 1) 50%, rgba(199, 199, 199, 1) 79%, rgba(255, 255, 255, 1) 100%);    
     background-clip: text; 
@@ -179,7 +180,7 @@ header a:active {
 .home-des {
     display: none;
     color: white;
-    margin: 0;
+    margin: 0 0 0 0.7vw;
     font-size: 1rem;
     font-size: clamp(1rem, 0.5634517766497462rem + 2.030456852791878vw, 3rem);
 }
@@ -197,7 +198,7 @@ header a:active {
 }
 
 .fade-In-Up.show {
-    animation: fadeInUp 1s ease forwards;
+    animation: fadeInUp 1s forwards;
 }
 
 .header-anim {
@@ -205,9 +206,30 @@ header a:active {
 }
 
 .header-anim.show {
-    animation: header-anim 1s ease forwards;
+    animation: header-anim 1s forwards;
 }
 
+.grid-anim {
+    opacity: 0;
+}
+
+.grid-anim.show {
+    animation: grid 1s forwards;
+}
+
+.grid-anim:nth-child(2) {
+    animation-delay: 200ms;
+}
+
+.grid-anim:nth-child(3) {
+    animation-delay: 500ms;
+}
+
+.grid-anim:nth-child(4) {
+    animation-delay: 800ms;
+}
+
+/*  Home des  */
 .home-des.show span:nth-child(1) {
     animation: child1 1.5s ease forwards;
 }
@@ -216,6 +238,8 @@ header a:active {
     animation: child1 1.5s ease forwards;
 }
 
+
+/*  About title  */
 .about-title span:nth-child(1) {
     color: white;
 }
@@ -229,9 +253,29 @@ header a:active {
 }
 
 
+/*  skills title  */
+.skills-title span:nth-child(1) {
+    color: white;
+}
+
+.skills-title.show span:nth-child(1) {
+    animation: child1 1s ease forwards;
+}
+
+.skills-title.show span:nth-child(2) {
+    animation: child1 1s ease forwards;
+}
+
+
 @keyframes child1 {
     from {margin-right: 0;}
     to {margin-right: clamp(0.8rem, 2vw, 1.7rem);}
+}
+
+@keyframes grid {
+    0% {opacity: 0; transform: translateX(-100%); filter: blur(5px);}
+    50% {transform: translateX(0); filter: blur(0px);}
+    100% {opacity: 1;}
 }
 
 @keyframes fadeInUp {
@@ -258,18 +302,25 @@ header a:active {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: #ffffff00;
+    background-color: #141415;
 }
 
 #homeBtn {
     position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     right: 2%;
     bottom: 4%;
-    padding: 0.5em 0.5em;
+    padding: 0.5em;
     margin: 10px 10px;
     border-radius: 20em;
     opacity: 0;
     transition: opacity 0.5s ease;
+}
+
+#homeBtn img {
+    width: clamp(40px, 8vw, 50px);
 }
 
 #homeBtn.show {
@@ -287,7 +338,7 @@ header a:active {
 .about-title {
     font-size: 2.3rem;
     font-size: clamp(2.3rem, 1.9599999999999997rem + 1.7000000000000002vw, 4rem);
-    margin: clamp(0.5rem, 2vw , 2.5rem) 0;
+    margin: clamp(0.5rem, 1vw , 2rem) 0;
     color: rgb(255, 255, 255);
     text-wrap: wrap;
 }
@@ -304,11 +355,64 @@ header a:active {
 
 /*  Next Section  */
 
-.test {
-    background-color: black;
+.skills {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1e1e20;
     height: 100vh;
 }
 
+.skills-content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 60%;
+}
+
+.skills-title {
+    font-size: 2rem;
+    font-size: clamp(1.8rem, 1.3rem + 2vw, 4rem);
+    margin: clamp(0.5rem, 0.5vw , 0.5rem) 0;
+    color: rgb(255, 255, 255);
+    text-wrap: wrap;
+}
+
+.skills-des {
+    color: white;
+    font-size: 1rem;
+    font-size: clamp(1rem, 0.9rem + 0.5vw, 1.5rem);
+    text-align: center;
+    line-height: 1.8;
+    margin-top: 1rem;
+    margin-bottom: clamp(3rem, 3vw , 4rem);
+}
+
+
+.items-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 15px;
+}
+
+
+.item img{
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.item{
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+.item:hover img{
+    transform: scale(1.1);
+}
 
 
 /* Responsive media queries */
@@ -324,6 +428,10 @@ header a:active {
     }
 
     .aboutme-content {
+        width: 65%;
+    }
+
+    .skills-content {
         width: 65%;
     }
 }
@@ -343,6 +451,9 @@ header a:active {
         text-align: center;
     }
     
+    .skills-title {
+        text-align: center;
+    }
 
 }
 
@@ -361,6 +472,10 @@ header a:active {
     }
 
     .about-title {
+        text-align: center;
+    }
+
+    .skills-title {
         text-align: center;
     }
 }
