@@ -23,18 +23,7 @@ const observer = new IntersectionObserver((entries) => {
 const elementsToAnimate = document.querySelectorAll('.animate-me');
 elementsToAnimate.forEach((el) => observer.observe(el));
 
-
-// Home Button Oberver 
-
-
-
 // Functioning
-aboutBtnNav.addEventListener('click', () => {
-    aboutPage.scrollIntoView({
-        behavior: 'smooth'
-    });
-});
-
 homeBtn.addEventListener('click', () => {
     homePage.scrollIntoView({
         behavior: "smooth"
