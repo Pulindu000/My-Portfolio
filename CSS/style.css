@@ -54,7 +54,7 @@ header ul li a {
 }
 
 header ul li a:hover {
-    color: rgb(160, 160, 160);
+    color: #DDE6ED;
     transform: scale(1.1);
 }
 
